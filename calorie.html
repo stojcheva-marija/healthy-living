@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+	<title>Healthy living</title>
+	<meta name="viewport" content="width=device-width,initial scale=1">
+    <link data-require="bootstrap@*" data-semver="3.3.5" rel="stylesheet" src="bootstrap.min.css" />
+    <link data-require="font-awesome@*" data-semver="4.3.0" rel="stylesheet" src="font-awesome.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script data-require="jquery@*" data-semver="2.1.4" src="jquery-2.1.4.min.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.3.5" src="bootstrap.min.js"></script>
+    <script data-require="angular.js@1.4.3" data-semver="1.4.3" src="angular.js"></script>
+    <script data-require="ui-router@*" data-semver="0.2.15" src="angular-ui-router.js"></script>
+    <script data-require="underscore.js@*" data-semver="1.8.3" src="underscore-min.js"></script>
+    <script data-require="ui-bootstrap@*" data-semver="1.1.1" src="ui-bootstrap-1.1.1.js"></script>
+	<script src="ngStorage.js"></script>
+    <link rel="stylesheet" href="calories.css" />
+	<link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+    <script src="MainController.js"></script>
+  </head>
+
+  <body ng-controller="mainController as vm">
+  <div class="nav-bar">
+		<div class="nav-logo">
+			<img src="logos.png">
+		</div>
+		<div class="nav-links" id="nav-links">
+			<a href="#" onclick="closeMenu()"><i class="fa fa-close" ></i></a>
+			<ul>
+				<a href="home.html"><li>HOME</li></a>
+				<a href="about.html"><li>ABOUT</li></a>
+				<a href="bmi.html"><li>BMI</li></a>
+				<a href="healthyWeight.html"><li>HEALTHY WEIGHT</li></a>
+				<a href="calorie.html"><li>CALORIES</li></a>
+			</ul>
+		</div>
+		<a href="#" onclick="showMenu()"><i class="fa fa-bars"></i></a>
+	</div>
+	
+	<div class="vertical-bar">
+		<div class="search-icon">
+			<a href="https://www.google.com" target="_blank"><i class="fa fa-search"></i></a> 
+			 
+		</div>
+		<div class="social-icons">
+			<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
+		</div>
+	</div>
+
+    <div class="container-fluid">
+      <form>
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="h3">Calories to Consume to Maintain Weight</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group has-warning">
+              <div class="input-group input-select">
+                <span class="input-group-addon input-label">Activity:</span>
+                <select class="form-control" 
+                  ng-options="option.name for option in vm.activityOptions" 
+                  ng-model="vm.selectedActivity" 
+                  title="{{vm.selectedActivity.description}}"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group has-warning">
+              <div class="input-group">
+                <span class="input-group-addon input-label">Weight in kg:</span>
+                <input type="text" id="Border2" class="form-control" ng-model="vm.inputWeight" ng-model-options="{debounce: 500}" placeholder="" />
+                <!--<span class="input-group-addon">kg</span>-->
+                <span class="input-group-btn">
+                  <button type="button" class="btn_btn-toggle" ng-click="vm.toggleInputUnitsWeight()" tabindex="-1" title="Click to toggle kg/lbs">
+                    {{vm.storage.inputUnitsWeight}}
+                    &nbsp;<i class="fa fa-toggle-on" ng-class="{'fa-flip-horizontal': vm.storage.inputUnitsWeight !== 'kg'}"></i>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="Border">
+            <fieldset disabled="">
+              <div class="form-group" ng-class="{'has-success' : vm.activeMaintenanceFormula === 'KB'}">
+                <div class="input-group">
+                  <span class="input-group-addon input-label" id="Border">Your calorie intake should be:</span>
+                  <input type="text" ng-model="vm.kinobodyEstimateMaintenanceCalories_display" class="form-control text-right" style="color:white;" placeholder="Required: weight" readonly="" />
+                  <span class="input-group-addon">kcal</span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <hr />
+        
+
+        
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="h3">Calories to Consume to Change Weight</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group has-warning">
+              <div class="input-group input-select">
+                <span class="input-group-addon input-label">Set your goal:</span>
+                <select class="form-control" 
+                  ng-options="option.name for option in vm.deficitOptions" 
+                  ng-model="vm.selectedDeficit"></select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6" id="Border1">
+            <fieldset disabled="">
+              <div class="form-group has-success">
+                <div class="input-group">
+                  <span class="input-group-addon input-label" id="Border1">Maintenance</span>
+                  <input type="text" ng-model="vm.maintenanceCalories" id="maintenanceCalories" class="form-control text-right" style="color:white;" placeholder="" readonly="" />
+                  <span class="input-group-addon">kcal</span>
+                </div>
+              </div>
+              <div class="form-group has-success">
+                <div class="input-group">
+                  <span class="input-group-addon input-label" id="Border1">Daily calories ({{vm.selectedDeficit.goal}})</span>
+                  <input type="text" ng-model="vm.deficitCalories" id="deficitCalories" class="form-control text-right" style="color:white;" placeholder="" readonly="" />
+                  <span class="input-group-addon">kcal</span>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <hr />
+        
+
+        
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <button type="button" class="btn btn-default" ng-click="vm.resetStorage()" tabindex="-1">
+                <i class="fa fa-fw fa-remove"></i>
+                Clear my data&nbsp;
+              </button>
+            </div>          
+          </div>
+        </div>
+        
+      </form>
+     </div>
+	<div class="notifications">
+    <div class="contents">
+      <small>Apart from calculating your <a href="bmi.html"><span class="BMI">BMI</span></a>, you can calculate your <a href="healthyWeight.html"><span class="BMI">healthy weight</span></a> and the <a href="calorie.html"><span class="BMI">calories</span></a> you need to consume</small>
+    </div>
+    <div class="notification-img">
+      <img src="png.png">
+    </div>
+  </div>
+
+	<script>
+		var show=document.getElementById("nav-links");
+		function showMenu(){
+			show.style.right= "0px";
+		}
+
+		function closeMenu(){
+			show.style.right= "-200px";
+		}
+	</script>
+
+  </body>
+
+</html>

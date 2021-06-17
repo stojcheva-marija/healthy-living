@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Healthy living</title>
+	<meta name="viewport" content="width=device-width,initial scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="healthy_weight.css" />
+<script src="healthy_weight.js"></script>
+</head>
+<body>
+<div class="nav-bar">
+		<div class="nav-logo">
+			<img src="logos.png">
+		</div>
+		<div class="nav-links" id="nav-links">
+			<a href="#" onclick="closeMenu()"><i class="fa fa-close" ></i></a>
+			<ul>
+				<a href="home.html"><li>HOME</li></a>
+				<a href="about.html"><li>ABOUT</li></a>
+				<a href="bmi.html"><li>BMI</li></a>
+				<a href="healthyWeight.html"><li>HEALTHY WEIGHT</li></a>
+				<a href="calorie.html"><li>CALORIES</li></a>
+			</ul>
+		</div>
+		<a href="#" onclick="showMenu()"><i class="fa fa-bars"></i></a>
+	</div>
+	
+	<div class="vertical-bar">
+		<div class="search-icon">
+			<a href="https://www.google.com" target="_blank"><i class="fa fa-search"></i></a> 
+			 
+		</div>
+		<div class="social-icons">
+			<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
+		</div>
+	</div>
+	
+<div class="healthyWeight">
+<div id=outer>
+<div id=cover>
+
+<form name=iw><b>Heathy Weight Calculator</b><br><br>
+<table class=main>
+<tr>
+<col class=w40><col  class=w60>
+<tr>
+<td>Measuring System<td><select id=msw onchange=msystem();>
+<option value=metric>Metric (Kgs, Cms)<option value=us>US (lbs, inches)</select>
+<tr>
+<td>Sex<td><select id=sw><option value=m>Male<option value=f>Female</select>
+<tr>
+<td>Height <span id=thw>(Cms)</span><td><input id=hw>
+<tr>
+<td><button type=reset>Reset</button><td><button type=button onclick='bweight();'>Calculate</button>
+<tr>
+<td>Ideal Weight:<td><input id=ibw class=op><tr><td>Healthy Weight:<td><input id=ibw1 class=op>
+<tr>
+<td colspan=2 class=ac ><span class="meaning"><br>This Calculator is suitable only for Adults over 18 years.</span></table></form></div></div>
+</div>
+	<div class="notifications">
+		<div class="contents">
+			<small>Apart from calculating your <a href="bmi.html"><span class="BMI">BMI</span></a>, you can calculate your <a href="healthyWeight.html"><span class="BMI">healthy weight</span></a> and the <a href="calorie.html"><span class="BMI">calories</span></a> you need to consume</small>
+		</div>
+		<div class="notification-img">
+			<img src="png.png">
+		</div>
+	</div>
+
+	<script>
+		var show=document.getElementById("nav-links");
+		function showMenu(){
+			show.style.right= "0px";
+		}
+
+		function closeMenu(){
+			show.style.right= "-200px";
+		}
+	</script>
+</body>
+</html>

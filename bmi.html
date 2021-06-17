@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="bmiApp">
+<head>
+	<title>Healthy living</title>
+	<meta name="viewport" content="width=device-width,initial scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	
+    <!-- Scripts -->
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="angular.js@1.2.13" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js"></script>
+  <script src="bmi.js"></script>
+  
+  </head>
+
+<!-- Main Content starts here -->
+<body data-ng-controller="bmiController">
+
+	<div class="nav-bar">
+		<div class="nav-logo">
+			<img src="logos.png">
+		</div>
+		<div class="nav-links" id="nav-links">
+			<a href="#" onclick="closeMenu()"><i class="fa fa-close" ></i></a>
+			<ul>
+				<a href="home.html"><li>HOME</li></a>
+				<a href="about.html"><li>ABOUT</li></a>
+				<a href="bmi.html"><li>BMI</li></a>
+				<a href="healthyWeight.html"><li>HEALTHY WEIGHT</li></a>
+				<a href="calorie.html"><li>CALORIES</li></a>
+			</ul>
+		</div>
+		<a href="#" onclick="showMenu()"><i class="fa fa-bars"></i></a>
+	</div>
+	
+	<div class="vertical-bar">
+		<div class="search-icon">
+			<a href="https://www.google.com" target="_blank"><i class="fa fa-search"></i></a> 
+			 
+		</div>
+		<div class="social-icons">
+			<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+			<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
+		</div>
+	</div>
+
+	
+  <div class="classs">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="jumbotron text-center">BMI Calculator</h3> 
+         </br>
+        <form role="form"> 
+          <div class="form-group">
+            <div class="radio">
+              <label>
+                <input type="radio" ng-model="units" value="imperial">
+                <span class="label label-danger" >Imperial</span> 
+              </label>
+            </div> 
+            </br>
+            <div class="radio">
+              <label>
+                <input type="radio" ng-model="units" value="metric">
+                <span class="label label-success">Metric</span>
+              </label>
+            </div>
+            
+          </div>
+          </br>
+          <div id="metric" ng-show="units == 'imperial'">
+            <div class="form-group">
+              <label for="weight">Weight (lb):</label>&nbsp;&nbsp;&nbsp;
+              <input type="number" ng-model="weight_lb" 
+              id="weight"
+              placeholder="weight in lb" class="form-control">    
+            </div>
+            </br>
+            <div class="form-group">
+              <label for="weight_foot">Height (foot):</label>
+              <input type="number" ng-model="height_foot" 
+              id="weight_foot"
+              placeholder="height in foot" class="form-control">    
+            </div>
+            </br>
+            <div class="form-group">
+              <label for="height_inch">Height (inch):</label>
+              <input type="number" ng-model="height_inch" 
+              id="height_inch"
+              placeholder="height in inch" class="form-control">    
+            </div>
+          </div>
+           </br>
+          <div id="metric" ng-show="units == 'metric'">
+            <div class="form-group">
+              <label for="weight_kg">Weight (kg):</label>
+              <input type="number" ng-model="weight_kg" 
+              id="weight_kg"
+              placeholder="weight in kg" class="form-control">    
+            </div>
+             </br>
+            <div class="form-group">
+              <label for="height_cm">Height (cm):</label>
+              <input type="number" ng-model="height_cm" 
+              id="height_cm"
+              placeholder="height in cm" class="form-control">    
+            </div>
+            
+          </div>
+        </form>
+         </br>
+        <!-- Calculated BMI is shown here -->
+        <div class="well text-center">
+          <h3 class="text-muted">Calculated BMI</h3>
+          <h2><span class="label label-{{catClass}}" title="{{catTitle}}">{{bmi | number:1}}</span></h2>
+          <h4 class="text-muted">{{catTitle}}</h4><br>
+        </div>
+        
+        
+      </div>
+    </div>
+     <div class="meaning">
+    <h3>BMI Meaning:</h3>
+<span>Underweight < 19<br>
+Normal weight = 19–24<br>
+Overweight > 24</span>
+  </div>
+  </div>
+
+  <div class="notifications" style="position:relative; float:right">
+    <div class="contents">
+      <small>Apart from calculating your <a href="bmi.html"><span class="BMI">BMI</span></a>, you can calculate your <a href="healthyWeight.html"><span class="BMI">healthy weight</span></a> and the <a href="calorie.html"><span class="BMI">calories</span></a> you need to consume</small>
+    </div>
+		<div class="notification-img">
+			<img src="png.png">
+		</div>
+	</div>
+  
+<script>
+		var show=document.getElementById("nav-links");
+		function showMenu(){
+			show.style.right= "0px";
+		}
+
+		function closeMenu(){
+			show.style.right= "-200px";
+		}
+	</script>
+  
+</body>
+</html>
