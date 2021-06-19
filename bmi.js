@@ -1,7 +1,7 @@
 // Code goes here
-var app = angular.module('bmiApp', []);
+var app = angular.module('healty-living', []);
 
-angular.module('bmiApp', []).config(function ($locationProvider) {
+angular.module('healty-living', []).config(function ($locationProvider) {
   $locationProvider.html5Mode(true);
 });
 
