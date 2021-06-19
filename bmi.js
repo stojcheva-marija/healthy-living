@@ -1,9 +1,5 @@
 // Code goes here
-var app = angular.module('healty-living', []);
-
-angular.module('healty-living', []).config(function ($locationProvider) {
-  $locationProvider.html5Mode(true);
-});
+var app = angular.module('bmiApp', []);
 
 app.controller('bmiController', function ($scope) {
     $scope.units = "imperial";
