@@ -80,5 +80,5 @@ app.controller('bmiController', function ($scope) {
     });
     
     
-});
+}());
 
