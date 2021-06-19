@@ -1,6 +1,10 @@
 // Code goes here
 var app = angular.module('bmiApp', []);
 
+angular.module('bmiApp', []).config(function ($locationProvider) {
+  $locationProvider.html5Mode(true);
+});
+
 app.controller('bmiController', function ($scope) {
     $scope.units = "imperial";
     $scope.catClass = "default";
