@@ -8,7 +8,7 @@
 .w60{width:60%}.w40{width:40%}
 .main button{background-color:black; border: none;color: white;border-radius: 8px;padding: 5px;width:100%;font:600 12px arial;margin:2px 0;}
 .healthyWeight {
-	//margin-left:100px;
+	margin-left:100px;
 	width:40%;
 	color: white;
 	font-size:18px;
