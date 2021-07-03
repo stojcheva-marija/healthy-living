@@ -233,6 +233,7 @@ small{
 	color: black;
 }
 
+
 .h3{
 	text-align: center;
 	font-size: 22px;
@@ -456,7 +457,7 @@ select {
 	}
 	
 	.healthyWeight {
-	margin-left:0px;
+		margin-left: 0px;
 	}
 
 	#JAS {
