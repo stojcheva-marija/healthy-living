@@ -8,8 +8,8 @@
 	
 	
     <!-- Scripts -->
-  <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-  <script src="https://code.angularjs.org/1.2.13/angular.js"></script>
+  <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script data-require="angular.js@1.2.13" data-semver="1.2.13" src="http://code.angularjs.org/1.2.13/angular.js"></script>
   <script src="bmi.js"></script>
   
   </head>
@@ -19,35 +19,24 @@
 
 	<div class="nav-bar">
 		<div class="nav-logo">
-			<img src="logos.png">
+			<img src="brain.png">
 		</div>
-		<div class="nav-links" id="nav-links">
-			<a href="#" onclick="closeMenu()"><i class="fa fa-close" ></i></a>
+		<div class="topnav" id="myTopnav">
+
 			<ul>
 				<a href="home.html"><li>HOME</li></a>
-				<a href="about.html"><li>ABOUT</li></a>
+				<a href="about.html"><li>ABOUT ME</li></a>
 				<a href="bmi.html"><li>BMI</li></a>
 				<a href="healthyWeight.html"><li>HEALTHY WEIGHT</li></a>
 				<a href="calorie.html"><li>CALORIES</li></a>
+
 			</ul>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i></a>
 		</div>
-		<a href="#" onclick="showMenu()"><i class="fa fa-bars"></i></a>
-	</div>
-	
-	<div class="vertical-bar">
-		<div class="search-icon">
-			<a href="https://www.google.com" target="_blank"><i class="fa fa-search"></i></a> 
-			 
-		</div>
-		<div class="social-icons">
-			<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-			<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-			<a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
-		</div>
+
 	</div>
 
-	
   <div class="classs">
   <div class="container">
     <div class="row">
@@ -136,20 +125,20 @@ Overweight > 24</span>
       <small>Apart from calculating your <a href="bmi.html"><span class="BMI">BMI</span></a>, you can calculate your <a href="healthyWeight.html"><span class="BMI">healthy weight</span></a> and the <a href="calorie.html"><span class="BMI">calories</span></a> you need to consume</small>
     </div>
 		<div class="notification-img">
-			<img src="png.png">
+			<img src="calculator.png">
 		</div>
 	</div>
-  
-<script>
-		var show=document.getElementById("nav-links");
-		function showMenu(){
-			show.style.right= "0px";
-		}
 
-		function closeMenu(){
-			show.style.right= "-200px";
-		}
-	</script>
+      <script>
+          function myFunction() {
+              var x = document.getElementById("myTopnav");
+              if (x.className === "topnav") {
+                  x.className += " responsive";
+              } else {
+                  x.className = "topnav";
+              }
+          }
+      </script>
   
 </body>
 </html>

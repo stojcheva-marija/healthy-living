@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 	<title>Healthy living</title>
 	<meta name="viewport" content="width=device-width,initial scale=1">
@@ -9,39 +9,35 @@
 <body>
 <div class="nav-bar">
 		<div class="nav-logo">
-			<img src="logos.png">
+			<img src="brain.png">
 		</div>
-		<div class="nav-links" id="nav-links">
-			<a href="#" onclick="closeMenu()"><i class="fa fa-close" ></i></a>
+		<div class="topnav" id="myTopnav">
+
 			<ul>
 				<a href="home.html"><li>HOME</li></a>
-				<a href="about.html"><li>ABOUT</li></a>
+				<a href="about.html"><li>ABOUT ME</li></a>
 				<a href="bmi.html"><li>BMI</li></a>
 				<a href="healthyWeight.html"><li>HEALTHY WEIGHT</li></a>
 				<a href="calorie.html"><li>CALORIES</li></a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i></a>
 			</ul>
 		</div>
-		<a href="#" onclick="showMenu()"><i class="fa fa-bars"></i></a>
-	</div>
-	<div class="vertical-bar">
-		<div class="search-icon">
-			<a href="https://www.google.com" target="_blank"><i class="fa fa-search"></i></a> 
-		</div>
-		<div class="social-icons">
-			<a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
-			<a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
-			<a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter"></i></a>
-			<a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest"></i></a>
-		</div>
+
 	</div>
 	<div id="sodrzina">
 		<div class="tekst">
-		<span class="span1">There are many reasons why being a healthy weight is important!<br><br></span>
-		<p>Did you know that a person with a <span class="BMI1">BMI</span>of between 30- 35 may die 2-4 years earlier than someone of a healthy weight?
-		And a person with a <span class="BMI1">BMI </span> of between 40-45 may die 8-10 years earlier.
-		People who are very underweight may also not live as long as those who are a healthy weight.<br>
-		But it’s not just about the risk of dying younger, it’s also about your quality of life – or how well you feel. People who are a healthy weight have a lower risk of: Heart disease, High blood pressure, Type 2 diabetes, Some types of cancer, Kidney disease, Back pain, Knee pain, Infertility, Breathing problems, Anxiety, Depression, Sleep problems.</p>
-		<span class="span2"><br>So, being a healthy weight can help you live longer, reduce your chances of developing chronic disease and help you get more out of life.</span>
+			<img id="JAS" src="me.jpg">
+			<p id="text">I’m thin. I’ve been thin my whole life. Tall and thin.</br>
+				<p id="text2">I am not going to complain, but this isn’t always easy. Even though the society idealizes thin bodies, I’ve taken my share of verbal abuse over the years. The idea of skiny-shaming is still very controversial, and people don’t find it inappropriate to approach a thin girl and tell her to “Go eat a hamburger”. Apparently, no one would go up to a fat person and tell them “Do you ever stop eating?”.
+				I was told that I am skinny since I was a child, but I didn’t pay attention to it until I became a teenager. Throughout my whole childhood, I always had some type of physical activity such as basketball, latino and hip-hop dance, volleyball, aerobics, boxing…  In 3rd year od high school I worked on a project that was very important to me and stopped doing sports. I didn’t put up any weight, but I was less toned. One of my friends told me that I wasn’t as skinny as before as that was a bad thing. That affected me mentally really bad. I didn’t want to eat anything and I lost 15kg in 2months. I was extremely skinny and my health was at risk. I wasn’t able to look myself at a mirror and was disguised by food at the same time. Then, I was told that I look too skinny. The body-shaming that others did to me didn’t hurt me at the moment, but has done much bigger damage to me. They made me body-shame myself and not be happy at my own skin, which is much worse.
+				It took me quite a lot of time to overcome the obstacles I had in my had and to start EAT ENOUGH. Being fit and skinny is not the same. I started working out a lot, eat properly and felt immediately better. It’s important to stay consistent and changes will happen for sure.
+				Since I am finally happy and I know how important it is to be confident in your own skin, I designed these colorful calculators to help you with your journeys. Be stronger than your strongest excuse. Be proud of who you are, not ashamed of how someone else sees you.
+		</p></br>xoxo,
+				</br>Marija
+			</p>
+			<a href="https://www.instagram.com/stojcheva_marija/"><img class="sm" src="instagram.png"></a>
+			<a href="https://www.facebook.com/stojceva.marija"><img class="sm" src="facebook.png"></a>
 		</br>
 		</div>
 
@@ -51,19 +47,19 @@
 			<small>Apart from calculating your <a href="bmi.html"><span class="BMI">BMI</span></a>, you can calculate your <a href="healthyWeight.html"><span class="BMI">healthy weight</span></a> and the <a href="calorie.html"><span class="BMI">calories</span></a> you need to consume</small>
 		</div>
 		<div class="notification-img">
-			<img src="png.png">
+			<img src="calculator.png">
 		</div>
 	</div>
 
-	<script>
-		var show=document.getElementById("nav-links");
-		function showMenu(){
-			show.style.right= "0px";
+<script>
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
 		}
-
-		function closeMenu(){
-			show.style.right= "-200px";
-		}
-	</script>
+	}
+</script>
 </body>
 </html>
