@@ -454,6 +454,10 @@ select {
 		margin-top: 0px;
 		width: 425px;
 	}
+	
+	.healthyWeight {
+	margin-left:0px;
+	}
 
 	#JAS {
 		width: 100%
