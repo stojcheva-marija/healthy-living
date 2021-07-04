@@ -233,7 +233,6 @@ small{
 	color: black;
 }
 
-
 .h3{
 	text-align: center;
 	font-size: 22px;
@@ -436,13 +435,13 @@ select {
 	}
 
 	.container {
-		margin-left: 80px;
+		margin-left: 15px;
 		margin-bottom: 10px;
 		margin-top: 0px;
 	}
 
 	#outer {
-		margin-left: 3px;
+		margin-left: -70px;
 		margin-right: 10px;
 		margin-bottom: 10px;
 		margin-top: 0px;
@@ -454,10 +453,6 @@ select {
 		margin-bottom: 10px;
 		margin-top: 0px;
 		width: 425px;
-	}
-	
-	.healthyWeight {
-		margin-left: 0px;
 	}
 
 	#JAS {
