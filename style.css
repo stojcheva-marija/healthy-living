@@ -7,7 +7,7 @@ body{
 	height: 100vh;
     background-color: #fcdff3;
 	position: relative;
-	//font-family: "Comic Sans MS","Bona Nova","Electra" sans-serif;
+	font-family: "Comic Sans MS","Bona Nova","Electra" sans-serif;
 }
 
 @font-face { 
