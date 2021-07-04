@@ -441,18 +441,18 @@ select {
 	}
 
 	#outer {
-		margin-left: -70px;
+		margin-left: 0px;
 		margin-right: 10px;
 		margin-bottom: 10px;
 		margin-top: 0px;
-		width: 450px;
+		width: 350px;
 	}
 
 	.container-fluid {
-		margin-left: 3px;
+		margin-left: 2px;
 		margin-bottom: 10px;
 		margin-top: 0px;
-		width: 425px;
+		width: 350px;
 	}
 
 	#JAS {
