@@ -2,20 +2,21 @@
 	margin: 0;
 	padding: 0;
 }
-
-body{
-	height: 100vh;
-    background-color: #fcdff3;
-	position: relative;
-	font-family: "Comic Sans MS","Bona Nova","Electra" sans-serif;
-}
-
 @font-face { 
   font-family: "Comic Sans MS";
   src: url('comicsansms3.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+body{
+	height: 100vh;
+    background-color: #fcdff3;
+	position: relative;
+	font-family: "Comic Sans MS";
+	//font-family: "Comic Sans MS","Bona Nova","Electra" sans-serif;
+}
+
+
 
 .nav-bar{
 	display: flex;
